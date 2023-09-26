@@ -71,4 +71,3 @@ if st.button('Add a Fruit to the List'):
   st.text(back_from_function)
 
 
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
