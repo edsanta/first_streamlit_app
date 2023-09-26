@@ -13,8 +13,6 @@ st.text('🥑🍞 Avocado Toast')
 
 st.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
-
-
 my_fruit_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
@@ -61,7 +59,7 @@ if st.button('Get Fruit Load List'):
 # Allow the end user to add a fruid to the list
 def insert_row_snowflake(fruit_added):
   with my_cnx.cursor() as my_cur:
-    my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+    my_cur.execute("insert into fruit_load_list values (" + fruit_added + "')")
     return 'Thanks for adding ' + fruit_added
 
 add_my_fruit = st.text_input('What fruit would you like to add?')
